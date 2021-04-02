@@ -1,0 +1,20 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model IEnumerable<Teams>
+
+@foreach (var x in Model)
+{
+    <a class="btn btn-dark mx-auto"
+       asp-action="Index"
+       asp-controller="Home"
+       asp-route-TeamId="@x.TeamId"
+       asp-route-TeamName="@x.TeamName">@x.TeamName</a>
+    <br />
+    <br />
+}
+
+<a class="mx-auto" asp-action="Index" asp-controller="Home" asp-route-TeamId="">Clear</a>
